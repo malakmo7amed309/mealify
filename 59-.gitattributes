@@ -1,0 +1,3 @@
+# Keep the vendored icon font CSS and the published copy out of the language bar
+all.min.css linguist-vendored
+docs/index.html linguist-generated
