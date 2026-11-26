@@ -1,431 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mealify - Restaurant & Chefs</title>
-    <meta name="description" content="Mealify - a restaurant landing page with chefs, gallery and contact, built with HTML and CSS." />
-    <meta property="og:title" content="Mealify - Restaurant & Chefs" />
-    <meta property="og:description" content="A restaurant landing page with chefs, gallery and contact, built with HTML and CSS." />
-    <meta property="og:image" content="https://malakmo7amed309.github.io/mealify/og-image.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="all.min.css"> 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mealify - Restaurant, menu, ordering and table booking</title>
+<meta name="description" content="Mealify is a restaurant site you can use: browse the menu, build an order, reserve a table and contact the team. A demo restaurant, built with HTML, CSS and JavaScript.">
+<meta property="og:title" content="Mealify - Restaurant, menu, ordering and table booking">
+<meta property="og:description" content="Browse the menu, build an order and reserve a table. A demo restaurant built with HTML, CSS and JavaScript.">
+<meta property="og:image" content="https://malakmo7amed309.github.io/mealify/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Inter:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem('mealify-theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
 <body>
-    
-
-<nav>
-<div class="container">
-    <a href="">Mealify<span>.</span></a>
-    <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">Chefs</a></li>
-        <li><a href="">Gallery</a></li>
-        <li><a href="">Contact</a></li>
+<a class="skip" href="#menu">Skip to menu</a>
+<nav id="nav">
+  <div class="container bar">
+    <a class="brand" href="#home">Mealify<span>.</span></a>
+    <ul id="links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#book">Book a table</a></li>
+      <li><a href="#chefs">Chefs</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-   
-     <div class="nav-icon">
-       <label for="icon" class="dark"><i class="fas fa-moon"></i></label>
-       <label for="icon" class="light"><i class="fas fa-sun"></i></label>
-       <input type="checkbox" hidden id="icon">
-     </div>
-</div>
+    <div class="tools">
+      <button id="theme" class="icon-btn" aria-label="Switch dark or light mode"><i class="fas fa-moon"></i></button>
+      <button id="cart-open" class="icon-btn cart-btn" aria-label="Open your order"><i class="fas fa-bag-shopping"></i><span id="cart-count" hidden>0</span></button>
+      <button id="burger" class="icon-btn burger" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
 </nav>
 
-
-
 <main>
-    <section class="home">
-<div class="container">
+<section class="home" id="home">
+  <div class="container hero">
     <div class="content">
-        <h2 class="amatic-font">Enjoy Your Healthy<br />
-            Delicious Food</h2>
-            <p>Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque eum quaerat.</p>
-            <div class="button">
-                <a href="" class="table-anchor">Book a Table</a>
-                <a href="" class="video-anchor">
-                    <div>
-                        <i class="fa-solid fa-play"></i>
-                    </div>
-                    Watch a Video
-                </a>
-            </div>
+      <p class="status" id="status"></p>
+      <h1 class="amatic-font">Enjoy Your Healthy<br>Delicious Food</h1>
+      <p class="lead">Fire-grilled meat, stretchy pizza and crunchy bowls, made fresh every day. Order for pickup or delivery, or book a table for tonight.</p>
+      <div class="actions">
+        <a href="#menu" class="btn">Order now</a>
+        <a href="#book" class="btn ghost">Book a table</a>
+      </div>
     </div>
-
-    <div class="img-container">
-        <img src="images/dish.png">
-    </div>
-</div>
-    </section>
-
-
-
-
-    <section class="chefs">
-        <div class="container">
-            <header>
-                <h2>CHEFS</h2>
-                <P class="amatic-font">Our <span>Proffessional</span> Chefs</P>
-            </header>
-            <div class="cards">
-                <div class="card">
-                 <div class="inner">
-                    <div class="img-container">
-                        <img src="images/chefs-1.jpg" alt="">
-                    </div>
-                       <div class="content">
-                          <h3>Walter White</h3>
-                          <h4>Master Chef</h4>
-                          <p>Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa quae aut. Ipsum exercitationem iure minima enim corporis et voluptate.</p>
-                       </div>
-                       <ul>
-                          <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-                          <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                          <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-                          <li><a href=""><i class="fa-brands fa-linkedin"></i></a></li>
-                       </ul>
-                 </div>
-               </div>
-               <div class="card">
-               <div class="inner">
-                <div class="img-container">
-                    <img src="images/chefs-2.jpg" alt="">
-                </div>
-                   <div class="content">
-                      <h3>Adam Johnson</h3>
-                      <h4>Patissier</h4>
-                      <p>Quo esse repellendus quia id. Est eum et accusantium pariatur fugit nihil minima suscipit corporis. Voluptate sed quas reiciendis animi neque sapiente.</p>
-                   </div>
-                   <ul>
-                       <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-                       <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                       <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-                       <li><a href=""><i class="fa-brands fa-linkedin"></i></a></li>
-                    </ul>
-               </div>
-            </div>
-            <div class="card">
-                <div class="inner">
-                    <div class="img-container">
-                        <img src="images/chefs-3.jpg" alt="">
-                    </div>
-                       <div class="content">
-                          <h3>William Anderson</h3>
-                          <h4>Cook</h4>
-                          <p>Vero omnis enim consequatur. Voluptas consectetur unde qui molestiae deserunt. Voluptates enim aut architecto porro aspernatur molestiae modi.</p>
-                       </div>
-                       <ul>
-                           <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-                           <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                           <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-                           <li><a href=""><i class="fa-brands fa-linkedin"></i></a></li>
-                      </ul>
-                </div>
-            </div>
-            </div
-        </div>   
-    </section>
-
-
-
-
-<section>
-    <div class="container">
-        <header class="header-text">
-            <h2>Gallery</h2>
-            <P class="amatic-font">Check  <span>Our Gallery</span> </P>
-        </header>
-        <div class="gallery-items">
-            <div class="item order-1">
-                <div class="inner">
-                    <img src="images/img.1.jpg" alt="">
-                    <div class="gallery-layer">  
-                        <h3>Pizza</h3>    
-                        <p>Hawaiian pizza with ham and pineapple</p>       
-                    </div>
-                </div>                 
-            </div>
-            <div class="item order-3">
-                <div class="inner">
-                    <img src="images/img.2.jpg" alt="">
-                    <div class="gallery-layer">  
-                        <h3>Levitation pizza</h3>    
-                        <p>Levitation pizza on black background.</p>       
-                    </div>
-                </div>
-            </div>
-            <div class="item order-5">
-                <div class="inner">
-                    <img src="images/img.3.jpg" alt="">
-                    <div class="gallery-layer">  
-                        <h3>Beef steaks</h3>    
-                        <p>Tasty beef steaks flying above cast iron grate with fire flames.</p>       
-                    </div>
-                </div>
-            </div>
-            <div class="item order-2">
-                <div class="inner">
-                    <img src="images/img.4.jpg" alt="">
-                    <div class="gallery-layer">
-                        <h3>burger</h3>
-                        <p>grass fed bison hamburger with chips & beer</p>
-                    </div>
-                </div>
-            </div>
-            <div class="item order-6">
-                <div class="inner">
-                    <img src="images/img.5.jpg" alt="">
-                    <div class="gallery-layer">  
-                        <h3>Crispy Fried Chicken</h3>    
-                        <p>Golden brown chicken legs with a crunchy coating and juicy meat</p>        
-                    </div>
-                </div>
-            </div>
-            <div class="item order-7">
-               <div class="inner">
-                   <img src="images/img.6.jpg" alt="">
-                   <div class="gallery-layer">  
-                     <h3>Lyulya kebab</h3>    
-                     <p>Tender and juicy skewers of ground lamb or beef, flavored with aromatic spices and herbs</p>       
-                   </div>
-               </div>
-            </div>
-            <div class="item order-4">
-                <div class="inner">
-                    <img src="images/img.7.jpg" alt="">
-                    <div class="gallery-layer">  
-                        <h3>Frittata</h3>    
-                        <p>Frittata or potato pie in a ceramic plate</p>       
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="dish"><img src="images/dish.png" alt="Crispy chili tofu bowl with roasted peppers, peanuts and mint"></div>
+  </div>
 </section>
 
+<section id="menu" class="section">
+  <div class="container">
+    <header class="head"><h2>MENU</h2><p class="amatic-font">Pick your <span>favourites</span></p></header>
+    <div class="menu-tools">
+      <div class="chips" id="chips" role="group" aria-label="Menu category"></div>
+      <label class="search"><span class="sr">Search the menu</span><i class="fas fa-magnifying-glass"></i><input id="q" type="search" placeholder="Search dishes" autocomplete="off"></label>
+    </div>
+    <div class="dishes" id="dishes" aria-live="polite"></div>
+    <p class="empty" id="no-dishes" hidden>Nothing matches that search. Try another word or clear the filter.</p>
+  </div>
+</section>
 
-
-
-
-    <section class="contact">
-        <h2>CONTACT</h2>
-        <p class="amatic-font">Need Help ? <span>Contact Us</span></p>
-        <div class="container">
-           <div class="map-container">
-               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158858.182370726!2d-0.10159865000000001!3d51.52864165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2z2YTZhtiv2YbYjCDYp9mE2YXZhdmE2YPYqSDYp9mE2YXYqtit2K_YqQ!5e0!3m2!1sar!2seg!4v1743977820968!5m2!1sar!2seg" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-           </div>
-           <div class="cards">
-             <div class="card">
-               <div class="inner">
-                  <div class="icon">
-                    <i class="fa-regular fa-map"></i>
-                  </div>
-                  <div class="content">
-                     <h3>Our Address</h3>
-                     <p>A Adam Street, New York, NY 535022</p>
-                  </div>
-               </div>
-             </div>
-             <div class="card">
-               <div class="inner">
-                <div class="icon">
-                    <i class="fa-solid fa-envelope"></i>
-                  </div>
-                  <div class="content">
-                     <h3>
-                        Email Us
-                        </h3>
-                     <p>contact@example.com</p>
-                  </div>
-               </div>
-             </div>
-             <div class="card">
-               <div class="inner">
-                <div class="icon">
-                <i class="fa-solid fa-phone"></i>
-                  </div>
-                  <div class="content">
-                     <h3>
-                        Call Us</h3>
-                     <p>+1 5589 55488 55</p>
-                  </div>
-               </div>
-            </div>
-            <div class="card">
-               <div class="inner">
-                <div class="icon">
-                    <i class="fa-solid fa-share-nodes"></i>
-                  </div>
-                  <div class="content">
-                     <h3>Opening Hours
-                    </h3>
-                     <p>Mon-Sat: 11AM - 23PM; Sunday : Closed</p>
-                  </div>
-               </div>
-            </div>
-            </div>
-           <form action="">
-            <div class="first-input">
-                <input type="text" placeholder="name">
-                <input type="email" placeholder="email">
-            </div>
-                <input type="text" placeholder="subject">
-                <textarea name="" id="" placeholder="message"></textarea>
-                <button>send message</button>
-           </form>
-       </div>
-
-
-       <div class="footer">
-        <div class="container">
-            <div class="footer-box">
-
-                <div class="about-footer">
-                    <div class="about-title">
-                        <img src="images/mealify img.png">
-                        <h2>Mealify<span>.</span></h2>
-                    </div>
-                    <p>Mealify is a restaurant landing page that offers a delicious dining experience to its customers.</p>
-                    <h3>social media</h3>
-                    <ul>
-                        <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-                        <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                        <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href=""><i class="fa-brands fa-linkedin"></i></a></li>
-                     </ul>
-                </div>
-
-                <div class="subscribtion">
-                    <h3>Subscribe our Newsletter</h3>
-                    <p>Don't miss out on our latest menu updates and exclusive offers - join our newsletter today and stay up-to-date with all things Mealify!</p>
-                    <div class="sup-group">
-                        <input type="email" name="email" placeholder=" Enter Your Email Address">
-                        <button>
-                            <i class="fa-solid fa-envelope"></i>
-                            message
-                        </button>
-                    </div>
-
-                    <div class="links">
-                        <h3>Quick Links</h3>
-
-                        <ul>
-                            <li>
-                                <a href="">
-                                    > Menu
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    > Promo
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    > About Us
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    > Contact Us
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    > Testimonial
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    > Our Parteners
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="contact-details">
-                    <h3>Get in Touch</h3>
-                    <ul>
-                        <li>
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>A108 Adam Street, New York, NY 535022</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-envelope"></i>
-                            <span>contact@example.com</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-phone"></i>
-                            <span> +1 5589 55488 55</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+<section id="book" class="section alt">
+  <div class="container book">
+    <div class="book-form">
+      <header class="head left"><h2>RESERVATION</h2><p class="amatic-font">Book a <span>table</span></p></header>
+      <form id="res-form" novalidate>
+        <div class="row">
+          <label>Date<input type="date" id="r-date"><small class="err" id="e-date"></small></label>
+          <label>Guests
+            <span class="stepper"><button type="button" id="g-minus" aria-label="Fewer guests">-</button><output id="r-guests">2</output><button type="button" id="g-plus" aria-label="More guests">+</button></span>
+            <small class="err" id="e-guests"></small></label>
         </div>
-       </div>
-    </section>
+        <fieldset><legend>Time</legend><div class="slots" id="slots"></div><small class="err" id="e-time"></small></fieldset>
+        <div class="row">
+          <label>Name<input id="r-name" autocomplete="name"><small class="err" id="e-name"></small></label>
+          <label>Mobile<input id="r-phone" inputmode="tel" autocomplete="tel" placeholder="010 1234 5678"><small class="err" id="e-phone"></small></label>
+        </div>
+        <label>Notes (optional)<input id="r-notes" placeholder="Birthday, high chair, allergies"></label>
+        <button class="btn" type="submit">Reserve table</button>
+      </form>
+    </div>
+    <aside class="book-list">
+      <h3>Your reservations</h3>
+      <ul id="res-list"></ul>
+      <p class="empty" id="res-empty">No reservations yet. They are saved in this browser only.</p>
+    </aside>
+  </div>
+</section>
 
-    
+<section id="chefs" class="section">
+  <div class="container">
+    <header class="head"><h2>CHEFS</h2><p class="amatic-font">Meet our <span>kitchen team</span></p></header>
+    <div class="cards">
+      <article class="chef"><img src="images/chefs-1.jpg" alt="Chef Karim Nabil in a red apron, smiling"><div><h3>Karim Nabil</h3><h4>Head chef</h4><p>Runs the grill. Twenty years of fire, salt and patience, and the reason the ribeye is never overcooked.</p></div></article>
+      <article class="chef"><img src="images/chefs-2.jpg" alt="Chef Omar Fathy in a tall white hat"><div><h3>Omar Fathy</h3><h4>Pastry and bakes</h4><p>Bakes the pizza dough every morning and keeps the frittata warm until the second it leaves the pass.</p></div></article>
+      <article class="chef"><img src="images/chefs-3.jpg" alt="Chef Tarek Samir with glasses, arms crossed"><div><h3>Tarek Samir</h3><h4>Sauces and sides</h4><p>Makes every sauce from scratch, from the burger sauce to the garlic dip. Ask him about the chili glaze.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="section alt">
+  <div class="container">
+    <header class="head"><h2>GALLERY</h2><p class="amatic-font">Take a <span>look</span></p></header>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="container contact">
+    <div>
+      <header class="head left"><h2>CONTACT</h2><p class="amatic-font">Need help? <span>Say hello</span></p></header>
+      <ul class="info">
+        <li><i class="fa-solid fa-location-dot"></i><div><b>Address</b><span>12 Nile Corniche, Fayoum (demo address)</span></div></li>
+        <li><i class="fa-solid fa-clock"></i><div><b>Opening hours</b><span>Mon to Sat, 11:00 to 23:00. Closed Sunday.</span></div></li>
+        <li><i class="fa-solid fa-phone"></i><div><b>Call us</b><span>010 0000 0000 (demo number)</span></div></li>
+        <li><i class="fa-solid fa-envelope"></i><div><b>Email</b><span>hello@mealify.example</span></div></li>
+      </ul>
+    </div>
+    <form id="msg-form" novalidate>
+      <label>Name<input id="m-name" autocomplete="name"><small class="err" id="em-name"></small></label>
+      <label>Email<input id="m-email" type="email" autocomplete="email"><small class="err" id="em-email"></small></label>
+      <label>Message<textarea id="m-text" rows="5"></textarea><small class="err" id="em-text"></small></label>
+      <button class="btn" type="submit">Send message</button>
+      <p class="ok" id="m-ok" role="status"></p>
+    </form>
+  </div>
+</section>
 </main>
 
+<footer>
+  <div class="container foot">
+    <div><h2 class="brand">Mealify<span>.</span></h2><p>A demo restaurant. Orders and bookings are not real: nothing is sent anywhere, and everything is saved only in your browser.</p></div>
+    <div><h3>Explore</h3><ul><li><a href="#menu">Menu</a></li><li><a href="#book">Book a table</a></li><li><a href="#chefs">Chefs</a></li><li><a href="#contact">Contact</a></li></ul></div>
+    <div>
+      <h3>Newsletter</h3>
+      <form id="news" novalidate class="news"><input id="n-email" type="email" placeholder="Your email" aria-label="Your email"><button class="btn">Join</button></form>
+      <p class="ok" id="n-ok" role="status"></p><small class="err" id="en-email"></small>
+    </div>
+  </div>
+  <p class="copy">Mealify, a demo by Malak Mohamed. Food photos are stock images.</p>
+</footer>
 
+<div class="scrim" id="scrim" hidden></div>
+<aside id="drawer" class="drawer" aria-label="Your order" aria-hidden="true">
+  <header><h2>Your order</h2><button class="icon-btn" id="cart-close" aria-label="Close order">&times;</button></header>
+  <div class="drawer-body" id="drawer-body"></div>
+</aside>
 
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-box"><h2 id="modal-title"></h2><div id="modal-body"></div><button class="btn" id="modal-close">Done</button></div></div>
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo"><button class="icon-btn lb-x" aria-label="Close photo" id="lb-close">&times;</button><button class="icon-btn lb-prev" aria-label="Previous photo" id="lb-prev">&#8249;</button><figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure><button class="icon-btn lb-next" aria-label="Next photo" id="lb-next">&#8250;</button></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<script src="logic.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
